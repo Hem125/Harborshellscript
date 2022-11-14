@@ -2,10 +2,13 @@
 # chmod o+x /root/
 # IP Address = 192.168.65.131
 # Harbor Address= harborscript.com
+
 #!/bin/bash
+
 
 # lets install docker first
 echo "lets install docker "
+
 sudo apt install docker.io
 echo "docker install"
 # now lets install docker-compose
