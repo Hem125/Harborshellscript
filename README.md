@@ -10,22 +10,37 @@
 echo "lets install docker "
 
 sudo apt install docker.io
+
 echo "docker install"
+
 # now lets install docker-compose
+
 echo "lets install docker compose"
+
 sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
 sudo chmod +x /usr/local/bin/docker-compose
+
 docker-compose --version
+
 echo "docker-compose install"
+
 ##
 echo "enter your system IPADDRESS"
+
 read HARBOR_IP
+
 # export HARBOR_IP=$HARBOR_IP
 echo "config daemon.json file"
+
 cd /etc/docker/
+
 touch daemon.json
+
 tee /etc/docker/daemon.json >/dev/null <<EOF
+                                             
 {
+                                             
     "insecure-registries" : ["$HARBOR_IP"]
 }
 EOF
